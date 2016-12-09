@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E40C91F1DFB38F80093260C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40C91E1DFB38F80093260C /* Request.swift */; };
+		6E40C9221DFB3C1F0093260C /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40C9211DFB3C1F0093260C /* PokemonService.swift */; };
 		6E65197C1DF9EFCF00CD832D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65197B1DF9EFCF00CD832D /* AppDelegate.swift */; };
 		6E6519811DF9EFCF00CD832D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E65197F1DF9EFCF00CD832D /* Main.storyboard */; };
 		6E6519841DF9EFCF00CD832D /* pokemongoloide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E6519821DF9EFCF00CD832D /* pokemongoloide.xcdatamodeld */; };
 		6E6519861DF9EFCF00CD832D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6519851DF9EFCF00CD832D /* Assets.xcassets */; };
 		6E6519891DF9EFCF00CD832D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6519871DF9EFCF00CD832D /* LaunchScreen.storyboard */; };
 		6E6519931DF9F87C00CD832D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6519921DF9F87C00CD832D /* HomeTableViewController.swift */; };
+		9FB30781F5A3B27DF8CAFE3C /* Pods_pokemongoloide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B775B83E6282008D192C8A5 /* Pods_pokemongoloide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4835A864E4CC8C22EA62DDC3 /* Pods-pokemongoloide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemongoloide.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokemongoloide/Pods-pokemongoloide.release.xcconfig"; sourceTree = "<group>"; };
+		6E40C91E1DFB38F80093260C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		6E40C9211DFB3C1F0093260C /* PokemonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
 		6E6519781DF9EFCF00CD832D /* pokemongoloide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokemongoloide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E65197B1DF9EFCF00CD832D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E6519801DF9EFCF00CD832D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		6E6519881DF9EFCF00CD832D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E65198A1DF9EFCF00CD832D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6519921DF9F87C00CD832D /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		7B775B83E6282008D192C8A5 /* Pods_pokemongoloide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokemongoloide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D218896465F66DA1EA050806 /* Pods-pokemongoloide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemongoloide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokemongoloide/Pods-pokemongoloide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB30781F5A3B27DF8CAFE3C /* Pods_pokemongoloide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E40C91D1DFB38DF0093260C /* request */ = {
+			isa = PBXGroup;
+			children = (
+				6E40C91E1DFB38F80093260C /* Request.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		6E40C9201DFB39B20093260C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6E40C9211DFB3C1F0093260C /* PokemonService.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		6E65196F1DF9EFCF00CD832D = {
 			isa = PBXGroup;
 			children = (
 				6E65197A1DF9EFCF00CD832D /* pokemongoloide */,
 				6E6519791DF9EFCF00CD832D /* Products */,
+				9B8C17FFF2DCE51E4FF1C0B0 /* Pods */,
+				D2FED05A55B6F3534A377D7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +83,8 @@
 		6E65197A1DF9EFCF00CD832D /* pokemongoloide */ = {
 			isa = PBXGroup;
 			children = (
+				6E40C9201DFB39B20093260C /* models */,
+				6E40C91D1DFB38DF0093260C /* request */,
 				6E65197B1DF9EFCF00CD832D /* AppDelegate.swift */,
 				6E65197F1DF9EFCF00CD832D /* Main.storyboard */,
 				6E6519921DF9F87C00CD832D /* HomeTableViewController.swift */,
@@ -67,6 +96,23 @@
 			path = pokemongoloide;
 			sourceTree = "<group>";
 		};
+		9B8C17FFF2DCE51E4FF1C0B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D218896465F66DA1EA050806 /* Pods-pokemongoloide.debug.xcconfig */,
+				4835A864E4CC8C22EA62DDC3 /* Pods-pokemongoloide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D2FED05A55B6F3534A377D7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B775B83E6282008D192C8A5 /* Pods_pokemongoloide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E65198D1DF9EFCF00CD832D /* Build configuration list for PBXNativeTarget "pokemongoloide" */;
 			buildPhases = (
+				DA3B60A1881871569AE707CD /* [CP] Check Pods Manifest.lock */,
 				6E6519741DF9EFCF00CD832D /* Sources */,
 				6E6519751DF9EFCF00CD832D /* Frameworks */,
 				6E6519761DF9EFCF00CD832D /* Resources */,
+				DBA6F70CD3DB0356FCF171DB /* [CP] Embed Pods Frameworks */,
+				05BE81FBAB58872EAA0BE1EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,12 +183,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05BE81FBAB58872EAA0BE1EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokemongoloide/Pods-pokemongoloide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA3B60A1881871569AE707CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DBA6F70CD3DB0356FCF171DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokemongoloide/Pods-pokemongoloide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E6519741DF9EFCF00CD832D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E40C9221DFB3C1F0093260C /* PokemonService.swift in Sources */,
 				6E6519931DF9F87C00CD832D /* HomeTableViewController.swift in Sources */,
+				6E40C91F1DFB38F80093260C /* Request.swift in Sources */,
 				6E65197C1DF9EFCF00CD832D /* AppDelegate.swift in Sources */,
 				6E6519841DF9EFCF00CD832D /* pokemongoloide.xcdatamodeld in Sources */,
 			);
@@ -262,6 +361,7 @@
 		};
 		6E65198E1DF9EFCF00CD832D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D218896465F66DA1EA050806 /* Pods-pokemongoloide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pokemongoloide/Info.plist;
@@ -274,6 +374,7 @@
 		};
 		6E65198F1DF9EFCF00CD832D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4835A864E4CC8C22EA62DDC3 /* Pods-pokemongoloide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pokemongoloide/Info.plist;
@@ -303,6 +404,7 @@
 				6E65198F1DF9EFCF00CD832D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
