@@ -6,18 +6,11 @@
 //  Copyright © 2016 Vinícius Terranova. All rights reserved.
 //
 
-final class Application {
-    
-    // Can't init is singleton
-    private init() { }
-    
-    //MARK: Shared Instance
-    
-    static let sharedInstance: Application = Application()
+struct Section {
     
     //MARK: Local Variable
     var id = Int()
-    var section = String()
+    var name = String()
     var price = Int()
     var pokemons = [Pokemon]()
 }

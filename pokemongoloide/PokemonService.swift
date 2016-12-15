@@ -25,18 +25,26 @@ struct PokemonService {
     }
     
     func parsePokemon(json: JSON) -> Pokemon {
-        
-
+    
         let id = json["id"].intValue
-        let types = json["types"].stringValue
         let name = json["name"].stringValue
-        let weakness = json["weakness"].stringValue
         let description = json["description"].stringValue
         let image = json["image"].stringValue
-
+        var types = [String]()
+        var weakness = [String]()
         
-        var pokemon = Pokemon(id: id, name: name, types: types, weakness: weakness, description: description, image: image)
+        //PARSE do Types e Weakness de Array pra String
+        for (_, type) in json["types"] {
+            types.append(type.stringValue)
+        }
+        
+        for (_, weak) in json["weakness"] {
+            weakness.append(weak.stringValue)
+        }
+        
+        let pokemon = Pokemon(id: id, name: name, types: types, weakness: weakness, description: description, image: image)
         
         return pokemon
     }
+    
 }

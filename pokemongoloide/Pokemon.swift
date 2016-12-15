@@ -10,10 +10,10 @@ struct Pokemon {
     
     var id: Int
     var name = String()
-    var types = [""]
-    var weakness = [""]
+    var types = [String]()
+    var weakness = [String]()
     var description = String()
     var image = String()
     
-
+    
 }
