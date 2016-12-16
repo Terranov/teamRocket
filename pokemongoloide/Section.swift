@@ -13,4 +13,11 @@ struct Section {
     var name = String()
     var price = Int()
     var pokemons = [Pokemon]()
+    
+    init(id : Int, name : String, price : Int, pokemons : [Pokemon]) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.pokemons = pokemons
+    }
 }

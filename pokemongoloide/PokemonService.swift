@@ -6,6 +6,7 @@
 //  Copyright © 2016 Vinícius Terranova. All rights reserved.
 //
 
+
 import SwiftyJSON
 
 struct PokemonService {
@@ -24,7 +25,7 @@ struct PokemonService {
         return pokemons
     }
     
-    func parsePokemon(json: JSON) -> Pokemon {
+    private func parsePokemon(json: JSON) -> Pokemon {
     
         let id = json["id"].intValue
         let name = json["name"].stringValue

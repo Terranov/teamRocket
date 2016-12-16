@@ -8,33 +8,33 @@
 
 import SwiftyJSON
 
+
 struct SectionService {
     
-    func getSection(success: @escaping (_ bool: Bool) -> Void, fail: @escaping (_ error: String) -> Void) {
+    func parseSections(json: JSON) -> [Section] {
         
-        Request.sharedInstance.APIRequest(method: .GET, endPoint: .Section,
-                                          
-                                          success: { result in
-                                            
-                                            self.parseSection(json: JSON(result))
-                                            
-                                            success(true)
-                                            
-        }, failure: { failure in
+        var sections = [Section]()
+        
+        for (_, section) in json {
             
-            fail("Não foi possível carregar a Section.")
+            let section = parseSection(json: section)
+            
+            sections.append(section)
         }
-        )
+        
+        return sections
     }
     
-    private func parseSection(json: JSON) {
+    func parseSection(json: JSON) -> Section {
         
-//        let featureService = FeatureService()
         let pokemonService = PokemonService()
         
-//        Section.sharedInstance.id = json["id"].intValue
-//        Section.sharedInstance.authClient = json["auth_client_id"].stringValue
-//        Section.sharedInstance.features = featureService.parseFeatures(json: json["featured"])
-        Section.sharedInstance.pokemon = pokemonService.parsePomeon(json: json["pokemon"])
+        let id = json["id"].intValue
+        let name = json["name"].stringValue
+        let price = json["price"].intValue
+        let pokemons = pokemonService.parsePokemons(json: json["pokemons"])
+        
+        return Section(id: id, name: name, price: price, pokemons: pokemons)
     }
+    
 }

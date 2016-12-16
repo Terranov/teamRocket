@@ -12,7 +12,7 @@ protocol URLS { }
 
 extension URLS {
     
-    func getUrl(_ type: EndPoint, filters: [(name: String, value: Any)]? = nil) -> String {
+    func getUrl(_ type: EndPoint) -> String {
         
         return type.url
     }
