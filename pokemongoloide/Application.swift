@@ -1,8 +1,8 @@
 //
-//  Application.swift
+//  Master.swift
 //  pokemongoloide
 //
-//  Created by Vinícius Terranova on 12/12/16.
+//  Created by Vinícius Terranova on 16/12/16.
 //  Copyright © 2016 Vinícius Terranova. All rights reserved.
 //
 
@@ -16,8 +16,5 @@ final class Application {
     static let sharedInstance: Application = Application()
     
     //MARK: Local Variable
-    var id = Int()
-    var section = String()
-    var price = Int()
-    var pokemons = [Pokemon]()
+    var section = [Section]()
 }

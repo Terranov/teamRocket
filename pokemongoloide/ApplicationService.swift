@@ -1,12 +1,13 @@
 //
-//  ApplicationService.swift
+//  MasterService.swift
 //  pokemongoloide
 //
-//  Created by Vinícius Terranova on 12/12/16.
+//  Created by Vinícius Terranova on 16/12/16.
 //  Copyright © 2016 Vinícius Terranova. All rights reserved.
 //
 
 import SwiftyJSON
+
 
 struct ApplicationService {
     
@@ -29,9 +30,9 @@ struct ApplicationService {
     
     private func parseApplication(json: JSON) {
         
-        let pokemonService = PokemonService()
+        let sectionService = SectionService()
         
-        Application.sharedInstance.id = json["id"].intValue
-        Application.sharedInstance.pokemon = pokemonService.parsePokemon(json: json["pokemon"])
+
+        Application.sharedInstance.section = sectionService.parseSections(json: json)
     }
 }

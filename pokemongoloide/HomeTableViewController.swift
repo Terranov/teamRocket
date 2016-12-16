@@ -10,6 +10,8 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
+    var home: Section?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +31,10 @@ class HomeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        guard let home = self.home else { return 0 }
+        
         return 0
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
