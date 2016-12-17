@@ -10,16 +10,18 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    var home: Section?
+    var home: Application?
+    
+
+    //fileprivate var pokemonSelected = Pokemon()
+    fileprivate var storedOffsets = [Int: CGFloat]()
+    fileprivate var sectionHeight = CGFloat(40)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,71 +32,72 @@ class HomeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         guard let home = self.home else { return 0 }
         
-        return 0
+        return home.section.count
 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        guard let home = self.home, let section = home.section.first else { return 0 }
+        
+        if home.section.count > 1 { return 1 }
+        else {
+            return section.pokemons.count
+        }
+
+        
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    override internal func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return sectionHeight
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override internal func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let home = self.home else { return UIView() }
+        
+        let section_ = section
+        
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: sectionHeight))
+        header.backgroundColor = .white
+        
+        let title = UILabel(frame: CGRect(x: 10, y: 7, width: view.frame.width, height: header.bounds.height))
+        title.text = home.section[section_].name
+        title.font = UIFont.boldSystemFont(ofSize: 16)
+        title.textColor = .darkGray
+        header.addSubview(title)
+        
+        return header
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 250
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
+    override internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewPokemonCell.identifier, for: indexPath) as! TableViewPokemonCell
+                
+         return cell
 
     }
-    */
+    
+    override internal func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let home = self.home, let section = home.section.first else { return }
+        
+        var section_ = indexPath.section
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+        guard let tableViewCell = cell as? TableViewPokemonCell else { return }
+        
+        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: section_)
+        tableViewCell.collectionViewOffset = storedOffsets[section_] ?? 0
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
 }
+
+
